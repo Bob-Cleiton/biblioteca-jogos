@@ -1,0 +1,175 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #111;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  nav a {
+    margin: 0 1rem;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .titulo-principal {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .descricao {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    color: #555;
+  }
+  
+  .container-jogos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .card-jogo {
+    width: 300px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s;;
+    overflow: hidden;
+  }
+  
+  .card-jogo:hover {
+    transform: scale(1.03);
+  }
+  
+  .card-jogo .capa {
+    position: relative;
+  }
+  
+  .card-jogo img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+  }
+  
+  .card-jogo h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    background-color: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .detalhes {
+    margin-top: 1rem;
+  }
+  
+  .oculto {
+    display: none;
+  }
+  
+  .video iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) 
+  {
+    .container-jogos {
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+    }
+  
+    .card-jogo {
+      width: 90%;
+    }
+  
+    .card-jogo img {
+      height: auto;
+      object-fit: cover;
+    }
+  
+    .card-jogo iframe {
+      width: 100%;
+      height: 200px;
+    }
+
+  .titulo-principal {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }  
+}
+
+
+
+
+/* Desktop Modal */
+.detalhes-modal {
+    display: none;
+  }
+  
+  /* Comportamento padrão: expandir no mobile */
+  @media (max-width: 768px) {
+    .detalhes-modal {
+      display: block;
+      padding: 1rem;
+    }
+  
+    .fechar-modal {
+      display: none;
+    }
+  }
+  
+  /* Modal flutuante para desktop */
+  @media (min-width: 769px) {
+    .detalhes-modal.ativo {
+      display: block;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      max-width: 600px;
+      background: white;
+      padding: 2rem;
+      z-index: 999;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      border-radius: 12px;
+    }
+  
+    .fechar-modal {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+  
+    /* Bloquear rolagem quando o modal estiver aberto */
+    body.modal-aberto {
+      overflow: hidden;
+    }
+  }
+  
